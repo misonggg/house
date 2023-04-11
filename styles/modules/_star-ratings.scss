@@ -1,0 +1,31 @@
+%star-ratinf-base {
+    @include flexbox(start);
+
+    .ic-star {
+        color: $border;
+
+        &.is-active {
+            color: $blue;
+        }
+    }
+}
+
+.stat-rating-13 {
+    @extend %star-ratinf-base;
+    font-size: 13px
+}
+
+.stat-rating-16 {
+    @extend %star-ratinf-base;
+    font-size: 16px
+}
+
+.stat-rating-20 {
+    @extend %star-ratinf-base;
+    font-size: 20px
+}
+
+.stat-rating-24 {
+    @extend %star-ratinf-base;
+    font-size: 24px
+}
