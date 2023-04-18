@@ -1,0 +1,26 @@
+.search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $search-modal-level;
+  width: 100%;
+  height: 100vh;
+  background-color: $white;
+  padding: 12px 0;
+
+  &-form {
+    @include flexbox(between);
+
+    .input-group {
+      // 이걸 써줌으로써 인풋그룹은 자신의 위드를 디바이스에 맞추게 됨
+      flex-grow: 1;
+    }
+
+    .btn-ghost {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 56px;
+      margin-left: 8px;
+    }
+  }
+}
