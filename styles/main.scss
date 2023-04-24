@@ -3,6 +3,7 @@
 @import './constants/breakpoints';
 @import './constants/box-shadows';
 @import './constants/z-indexes';
+@import './constants/dimensions';
 
 @import './base/fonts';
 @import './base/normalize';
@@ -13,6 +14,8 @@
 @import './mixins/responsive';
 @import './mixins/positions';
 @import './mixins/flexbox';
+@import './mixins/scrollbar';
+@import './mixins/star-rating';
 
 @import './modules/tags';
 @import './modules/avatars';
@@ -27,11 +30,21 @@
 @import './components/gnb_icon-buttons';
 @import './components/my-menu';
 @import './components/drawer-menu';
+@import './components/search-history';
+@import './components/lnb';
+@import './components/breadcrumb';
+@import './components/product-carousel';
+@import './components/product-info';
+@import './components/order-form';
+@import './components/checkout-card';
+@import './components/product-section-header';
 
 @import './layouts/grids';
 @import './layouts/gnb';
 @import './layouts/sidebar';
 @import './layouts/overlay';
 @import './layouts/search-modal';
+@import './layouts/global-footer';
+@import './layouts/global-header';
 
  
