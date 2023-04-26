@@ -4,6 +4,7 @@
 @import './constants/box-shadows';
 @import './constants/z-indexes';
 @import './constants/dimensions';
+@import './constants/grids';
 
 @import './base/fonts';
 @import './base/normalize';
@@ -41,6 +42,14 @@
 @import './components/procuct-table';
 @import './components/product-spec';
 @import './components/product-section';
+@import './components/review-scoreboard';
+@import './components/score-stats';
+@import './components/review-card';
+@import './components/product-review';
+@import './components/inquiry-card';
+@import './components/product-inquiry';
+@import './components/product-shipment';
+@import './components/product-card';
 
 @import './layouts/grids';
 @import './layouts/gnb';
