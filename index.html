@@ -2018,19 +2018,21 @@
       </div>
     </div>
 
-    <!-- 북마크,구매하기 하단 -->
+    <!-- 북마크,구매하기 하단 바-->
     <div class="order-cta lg-hidden">
       <!-- <button class="btn-ghost btn btn-48" type="button">
         <i class="ic-bookmark" aria-hidden>
           <span aria-label="북마크 18,302회">18,302</span>
         </i>
       </button> -->
+      <!--  -->
       <button class="btn-ghost btn btn-48 is-active" type="button">
         <i class="ic-bookmark-filled" aria-hidden></i>
         <span aria-label="북마크 18,303회">18,303</span>
       </button>
       <button class="btn-primary btn btn-48" type="button">구매하기</button>
     </div>
+
   </main>
 
   <footer class="global-footer">
@@ -2230,7 +2232,7 @@
   </aside>
 
   <!-- 모달 -->
-  <aside class="order-form-moda is-open lg-hidden">
+  <!-- <aside class="order-form-moda lg-hidden">
     <h1 class="visually-hidden">주문창</h1>
 
     <form class="order-form" action="/" method="POST">
@@ -2370,10 +2372,10 @@
         <button class="btn-primary btn-48" type="submit">구매하기</button>
       </div>
     </form>
-  </aside>
+  </aside> -->
 
   <!-- 카트 모달 -->
-  <!-- <aside class="cart-modal">
+  <aside class="cart-modal">
     <h1 class="cart-title">장바구니에 상품을 담았습니다.</h1>
     <div class="button-group">
       <a class="btn-primary btn-48" href="/">
@@ -2381,6 +2383,26 @@
       </a>
       <button class="btn-secondary btn-48" type="button">확인</button>
     </div>
+  </aside>
+
+  <!-- 북마크 했을 때 -->
+  <aside class="bookmark-toast">
+    <h1 class="bookmark-tile">스크랩했습니다</h1>
+    <button class="close-button" type="button" aria-label="닫기">
+      <i class="ic-close"></i>
+    </button>
+    <div class="button-group">
+      <a class="btn-outlined btn-32" href="/">스크랩북 보기</a>
+      <button class="btn-primary btn-32" type="button">폴더에 담기</button>
+    </div>
+  </aside>
+
+  <!-- 북마크 삭제했을 때 -->
+  <!-- <aside class="bookmark-toast">
+    <h1 class="bookmark-tile">스크랩북에서 삭제했습니다</h1>
+    <button class="close-button" type="button" aria-label="닫기">
+      <i class="ic-close"></i>
+    </button>
   </aside> -->
 
   <div class="overlay" aria-hidden></div>
