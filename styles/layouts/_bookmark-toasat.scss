@@ -12,7 +12,13 @@
   box-shadow: $popup-reversed-shadow;
   padding-left: $close-button-size;
   padding-right: $grid-margin;
+  
+  display: none;
 
+  &.is-active {
+    // block으로 바꿔주면 아래에 있는 애들 정렬이 어그러짐
+    display: flex;
+  }
 
  .bookmark-tile {
   @include text-style(13, $primary);
@@ -28,7 +34,6 @@
   color: $tertiary;
   width: $close-button-size;
   height: $close-button-size;
-
   &:active {
     color: $secondary;
   }
@@ -39,14 +44,51 @@
   .btn-outlined {
     width: 100px;
     font-size: 13px;
+    margin-right: 4px;
   }
   .btn-primary {
     width: 79px;
     font-size: 13px;
   }
 
-  .btn-outlined {
-    margin-right: 4px;
+ }
+
+ @include responsive(D) {
+  max-width: 480px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: $popup-shadow;
+  padding-left: 56px;
+  padding-right: 20px;
+
+  // 가운데로 보내는 거로 바꿈
+  @include pos-center-x(fixed);
+  bottom: 40px;
+
+  .bookmark-tile {
+    @include text-style(16);
   }
+  
+  .button-group {
+    .btn-outlined {
+      width: 112px;
+      font-size: 14px;
+      margin-right: 8px;
+    }
+    .btn-primary {
+      width: 90px;
+      font-size: 14px;
+    }
+   }
+
+   .ic-close {
+    font-size: 24px;
+    left: (56px - $close-button-size) / 2;
+
+    &:hover {
+      color: $secondary;
+    }
+   }
  }
 }
