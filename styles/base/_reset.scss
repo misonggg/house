@@ -44,9 +44,16 @@ button {
     cursor: pointer;
 }
 
+button {
+    padding: 0;
+}
+
 ul,
 ol {
     list-style: none;
     padding-left: 0;
 }
 
+address {
+    font-style: normal;
+}

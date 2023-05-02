@@ -1,0 +1,126 @@
+.inquiry-card {
+  padding-bottom: 40px;
+  &-header {
+    @include text-style(12);
+
+    .detail,
+    .misc {
+      @include flexbox(start);
+      margin-bottom: 8px
+
+    }
+
+    .detail {
+      color: $primary;
+
+      dd {
+        &.is-answered {
+          color: $blue;
+        }
+
+        &::after {
+          content: '|';
+          margin: 0 4px;
+          }
+
+        dd:last-child::after {
+          content: none;
+        }
+      }
+    }
+
+    .misc {
+      color: $tertiary;
+
+      strong {
+        font-weight: 400;
+
+        &::after {
+          content: '|';
+          margin: 0 4px;
+        }
+      }
+    }
+  }
+
+  &-body {
+    @include text-style(13, $primary);
+
+    .question-content {
+
+      position: relative;
+      padding-left: 20px;
+
+      span {
+        position: absolute;
+        @include text-style(13, $blue);
+        font-weight: 700;
+        top: 0;
+        left: 0;
+      }
+
+      p {
+        @include flexbox(start);
+
+        i {
+          color: $tertiary;
+          margin-right: 8px;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .answer-content {
+      margin-top: 20px;
+      @include text-style(13, $primary);
+
+      position: relative;
+      padding-left: 20px;
+      
+      span {
+        position: absolute;
+        @include text-style(13, $blue);
+        font-weight: 700;
+        top: 0;
+        left: 0;
+      }
+
+      strong {
+        @include text-style(13, $dark);
+        font-weight: 700;
+        margin-right: 4px;
+      }
+
+      time {
+        @include text-style(12, $tertiary);
+        font-weight: 400;
+      }
+
+      .seller {
+        margin-bottom: 6px;
+        @include flexbox(start);
+      }
+    }
+  }
+
+  @include responsive(T) {
+    &-header {
+      margin-bottom: 20px;
+    }
+    &-body {
+      @include text-style(14, $primary);
+
+      .question-content {
+        padding-left: 24px;
+      }
+
+      span {
+        @include text-style(16);
+      }
+
+      .answer-content {
+        margin-top: 16px;
+      }
+    }
+  }
+}

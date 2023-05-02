@@ -23,6 +23,7 @@ orderModalOverlay.addEventListener('click', CloseOrderModal)
 orderCtaBookmarkButton.addEventListener('click', toggleOrderCtaBookmark)
 
 function toggleOrderCtaBookmark() {
+
   const [icon, countSpan] = this.children
   const count = Number(countSpan.innerHTML.replaceAll(',', ''))
 
@@ -41,7 +42,8 @@ function toggleOrderCtaBookmark() {
   }
 
   countSpan.innerHTML = newCount.toLocaleString()
-
+  // countSpan.setAtrribute('aria-label', `북마크 ${newCount.toLocaleString()}회`)
+  
   this.classList.toggle('is-active')
 
 }

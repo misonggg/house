@@ -1,38 +1,54 @@
 const gnbSearch = document.querySelector('.gnb-search')
 const gnbSearchInput = gnbSearch.querySelector('input')
 const gnbSearchHistory = gnbSearch.querySelector('.search-history')
+const gnbSearchHistoryList = gnbSearchHistory.querySelector('ol')
 
-function closeGnbSearchHistoryOnclickingOutside(e) {
+const deleteAllButton = gnbSearchHistory.querySelector(
+  '.search-history-header button'
+)
+const deleteButtonList = gnbSearchHistoryList.querySelectorAll('.delete-button')
+
+function closeGnbSearchHistory() {
+  gnbSearchHistory.classList.remove('is-active')
+  window.removeEventListener('click', closeGnbSearchHistoryOnClickingOutside)
+}
+
+function closeGnbSearchHistoryOnClickingOutside(e) {
   if (!gnbSearch.contains(e.target)) {
-    gnbSearchHistory.classList.remove('is-active')
-    window.removeEventListener('click', closeGnbSearchHistoryOnclickingOutside)
+    closeGnbSearchHistory()
   }
 }
 
 function openGnbSearchHistory() {
-  if (gnbSearchHistoryList.children.length == 0) {
+  if (gnbSearchHistoryList.children.length === 0) {
     return
   }
 
   if (!gnbSearchHistory.classList.contains('is-active')) {
-    window.addEventListener('click', 
-    closeGnbSearchHistoryOnclickingOutside)
+    window.addEventListener('click', closeGnbSearchHistoryOnClickingOutside)
   }
   gnbSearchHistory.classList.add('is-active')
 }
 
 gnbSearchInput.addEventListener('focus', openGnbSearchHistory)
 
-
-// 전체삭제 -------------
-const deleteAllButton = gnbSearchHistory.querySelector(
-  '.search-history-header button'
-)
-const gnbSearchHistoryList = gnbSearchHistory.querySelector('ol')
-
-function deleteAllSearchHistory() {
+function deleteAllSearchHistoryItems() {
   gnbSearchHistoryList.innerHTML = ''
-  gnbSearchHistory.classList.remove('is-active')
+  closeGnbSearchHistory()
 }
 
-deleteAllButton.addEventListener('click',deleteAllSearchHistory)
+deleteAllButton.addEventListener('click', deleteAllSearchHistoryItems)
+
+function deleteSearchHistoryItem(e) {
+  e.stopPropagation()
+  const itemToDelete = this.parentNode
+  gnbSearchHistoryList.removeChild(itemToDelete)
+
+  if (gnbSearchHistoryList.children.length === 0) {
+    closeGnbSearchHistory()
+  }
+}
+
+deleteButtonList.forEach((button) => {
+  button.addEventListener('click', deleteSearchHistoryItem)
+})

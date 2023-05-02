@@ -1,0 +1,69 @@
+.floating-order-form {
+  $global-header-height: $gnb-height-md + $lnb-height-md + $product-tab-height-md;
+  @include flexbox(start, start);
+  position: sticky;
+  top: $global-header-height;
+  flex-direction: column;
+  min-height: calc(100vh - #{$global-header-height + $global-footer-height});
+  max-height: calc(100vh - $global-header-height);
+  width: 360px;
+  padding: 24px 0;
+  
+
+  > * {
+    width: 100%;
+  }
+
+  .order-input,
+  .order-summary,
+  .btn-g {
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+
+  .order-checkouts {
+    flex-grow: 1;
+  }
+
+  .btn-g {
+    @include flexbox;
+
+    .bookmark-button {
+      width: 55px;
+      height: 55px;
+      border-radius: 4px;
+      border: 1px solid $border;
+      background-color: $white;
+      transition: background-color 200ms ease-in-out;
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin-right: 8px;
+
+      &.is-active { 
+        i {
+          color: $blue;
+        }
+      }
+
+      &:hover {
+        background-color: $background;
+      }
+      
+      
+      i {
+        font-size: 32px;
+        color: $primary;
+      }
+    }
+
+    .btn-outlined {
+      margin-right: 8px;
+    }
+
+    .btn-outlined,
+    .btn-primary {
+      width: 145px;
+      height: 55px;
+    }
+  }
+}

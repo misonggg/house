@@ -1,0 +1,143 @@
+.review-card {
+  padding: 20px 0;
+  width: 100%;
+
+
+  &-header {
+    @include flexbox(start);
+    margin-bottom: 20px;
+
+    .avatar-24,
+    .username {
+      &:active {
+        opacity: 0.4;
+      }
+    }
+
+    .avatar-24 {
+      margin-right: 8px;
+    }
+
+    .info {
+
+      .username {
+        @include text-style(13, $primary);
+
+        strong {
+          font-weight: 400;
+        }
+        
+      }
+
+      .misc {
+        @include text-style(12, $secondary);
+
+        time::after {
+          content: ' ∙';
+        }
+      }
+
+      .star-rating-13 {
+        margin-right: 4px
+      }
+
+      .detail {
+        @include flexbox(start);
+      }
+    }
+  }
+
+  &-body {
+    margin-bottom: 20px;
+
+    .review-image {
+      margin-bottom: 8px;
+
+      width: 64px;
+      height: 64px;
+      border-radius: 4px;
+      overflow: hidden;
+
+
+      img {
+        // 리뷰 이미지가 자동으로 조정이 되도록
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    p {
+      @include text-style(13, $primary);
+      font-weight: 400;
+    }
+
+  }
+
+  &-footer {
+    @include flexbox(start);
+
+    button {
+      width: 120px;
+      margin-right: 8px;
+
+      i {
+        margin-right: 4px;
+        margin-left: -4px;
+        font-size: 20px;
+        color: $white;
+      }
+      
+    }
+
+    p {
+      @include text-style(12, $primary);
+
+      strong {
+        font-weight: 400;
+
+        span {
+          font-weight: 700;
+          color: $dark;
+        }
+      }
+    }
+  }
+
+  @include responsive(T) {
+    padding: 40px 0 40px 32px;
+    
+    &-header {
+      margin-left: -32px;
+
+      .username {
+        @include text-style(14);
+      }
+    }
+
+    &-body {
+
+      .review-image {
+        margin-bottom: 16px;
+        width: 112px;
+        height: 112px;
+      }
+
+      p {
+        @include text-style(14);
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-header {
+      .avatar-24,
+      .username {
+        &:hover {
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}

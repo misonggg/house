@@ -3,7 +3,7 @@
   $community-length: 8;
   $store-length: 4;
   $expert-length: 2;
-  $drawer-menu-list-padding: 8px;
+  $drawer-menu-list-padding: 20px;
 
   @function _calculate-max-content-heifgt($length) {
     @return $drawer-menu-item-height * $length + $drawer-menu-list-padding;
@@ -44,7 +44,7 @@
     }
 
     .drawer-menu-list {
-      padding: $drawer-menu-list-padding;
+      padding-bottom: $drawer-menu-list-padding;
     }
   }
 

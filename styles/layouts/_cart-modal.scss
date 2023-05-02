@@ -1,4 +1,6 @@
 .cart-modal {
+  display: none;
+
   @include pos-center(fixed);
   padding: 40px 24px;
   z-index: $cart-modal-level;
@@ -10,6 +12,10 @@
   border-radius: 8px;
 
   max-width: 360px;
+
+  &.is-active {
+    display: block;
+  }
 
   .cart-title {
     @include text-style(16, $dark);
@@ -34,7 +40,7 @@
   @include responsive(D) {
     padding-right: 32px;
     padding-left: 32px;
-    
+
     .cart-title {
       @include text-style(18);
       margin-bottom: 16px;
